@@ -11,3 +11,20 @@ class Solution:
             dp[i] = max(dp[i-1] + nums[i], nums[i])
         return max(dp)
         
+        
+//Java Implementation
+
+class Solution {
+    public int maxSubArray(int[] arr) {
+        int maximum = arr[0];
+        int curr_max = arr[0];
+        for(int i=1 ; i<arr.length; i++)
+        {
+            curr_max = Math.max(arr[i], curr_max+arr[i]);
+            maximum = Math.max(maximum, curr_max);
+        }
+        return maximum;
+        
+    }
+}
+        
